@@ -5,8 +5,9 @@ section .data            ; 数据段声明
         msg db "Hello, world!", 0xA     ; 要输出的字符串
         len equ $ - msg                 ; 字串长度
 section .text            ; 代码段声明
-global hello            ; 指定入口函数
-hello:                  ; 在屏幕上显示一个字符串
+global BigAdd            ; 指定入口函数
+BigAdd:                  ; 大整数加法，stdcall调用方式参数从左到右 为 num1 地址 num1长度 num2地址 num2 长度 存储缓冲区地址
+;注：参数从左边第一个开始为 rbp+16 往后每次+8
         push rbp
         mov rbp,rsp ;切换到此栈帧
         push rdx

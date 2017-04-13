@@ -13,6 +13,15 @@
             ]
         },
         {
+            "taskName": "buildcpp",
+            "command": "g++",
+            "args": [
+                "-o main",
+                "main.cpp",
+                "test.o"
+            ]
+        },
+        {
             "taskName": "ldrelease",
             "command": "ld",
             "args": [
